@@ -1,0 +1,53 @@
+curl http://localhost:5000/api/register
+curl http://localhost:5000/api/posts
+curl http://localhost:5000/api/profile
+curl http://localhost:5000/api/auth
+
+test1:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE
+
+test2:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZWU0NjY1N2YyN2MxNGQ2NDAzZTA1In0sImlhdCI6MTYwMDA1NDM3NCwiZXhwIjoxNjAzNjU0Mzc0fQ.nLabXM1wdgpB1cAgQpEHTzMJZwb-PEjDt8e_CtsT56M
+
+curl -d '{"name":"test1","email":"test1@gmail.com","password":"123456"}' -H "Content-Type:application/json" -X POST http://localhost:5000/api/register
+curl -d '{"name":"test2","email":"test2@gmail.com","password":"123456"}' -H "Content-Type:application/json" -X POST http://localhost:5000/api/register
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/auth
+
+curl -d '{"company":"company1","email":"test1@gmail.com","status":"status1","skills":"HTML,CSS,JS,Python","website":"https://www.test1.com","location":"shanghai","bio":"I am test1","githubusername":"test1","twitter":"https://twitter.com/test1","facebook":"https://facebook.com/test1","youtube":"https://youtube.com/test1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/profile
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/profile/me
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/profile/
+
+curl http://localhost:5000/api/profile/user/5f5ddc993c19fe2626c93905
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZWU0NjY1N2YyN2MxNGQ2NDAzZTA1In0sImlhdCI6MTYwMDA1NDM3NCwiZXhwIjoxNjAzNjU0Mzc0fQ.nLabXM1wdgpB1cAgQpEHTzMJZwb-PEjDt8e_CtsT56M" -X DELETE http://localhost:5000/api/profile/
+
+curl -d '{"title":"title1","company":"company1","location":"location1","from":"2020-09-14","to":"2020-09-16","current":"true","description":"description1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/profile/experience
+
+curl -d '{"title":"title2","company":"company2","location":"location2","from":"2020-09-14","to":"2020-09-16","current":"false","description":"description2"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/profile/experience
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/profile/experience/5f5f29c7d25357267b483b63
+
+curl -d '{"school":"school1","degree":"degree1","fieldofstudy":"IT","from":"2020-09-14","to":"2020-09-16","current":"false","description":"description2"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/profile/education
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/profile/education/5f5f2f2e19e8192c091e91c3
+
+curl http://localhost:5000/api/profile/github/zjgpf
+
+curl -d '{"text":"text2"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/posts
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/posts
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/posts/5f5f43465203583404133804
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/posts/5f5f486980c41c351cf8a599
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X PUT http://localhost:5000/api/posts/like/5f5f4d6c5425e83693a2bd98
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X PUT http://localhost:5000/api/posts/unlike/5f5f4d6c5425e83693a2bd98
+
+curl -d '{"text":"text1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98
+
+curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98/5f5f594bca4bd63a468673ae
