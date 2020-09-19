@@ -12,6 +12,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZWU0NjY1N2YyN2MxNGQ
 curl -d '{"name":"test1","email":"test1@gmail.com","password":"123456"}' -H "Content-Type:application/json" -X POST http://localhost:5000/api/register
 curl -d '{"name":"test2","email":"test2@gmail.com","password":"123456"}' -H "Content-Type:application/json" -X POST http://localhost:5000/api/register
 
+curl -d '{"email":"test1@gmail.com","password":"123456"}' -H "Content-Type:application/json" -X POST http://localhost:5000/api/auth
+
 curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" http://localhost:5000/api/auth
 
 curl -d '{"company":"company1","email":"test1@gmail.com","status":"status1","skills":"HTML,CSS,JS,Python","website":"https://www.test1.com","location":"shanghai","bio":"I am test1","githubusername":"test1","twitter":"https://twitter.com/test1","facebook":"https://facebook.com/test1","youtube":"https://youtube.com/test1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/profile
@@ -51,3 +53,4 @@ curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiN
 curl -d '{"text":"text1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98
 
 curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98/5f5f594bca4bd63a468673ae
+

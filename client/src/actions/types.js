@@ -1,0 +1,7 @@
+export const ADD_ALERT = 'ADD_ALERT';
+export const DELETE_ALERT = 'DELETE_ALERT';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAILED = 'REGISTER_FAILED';
+export const SET_LOADING = 'SET_LOADING';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILED = 'LOGIN_FAILED';
