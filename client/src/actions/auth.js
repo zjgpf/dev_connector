@@ -3,7 +3,8 @@ import {
   REGISTER_FAILED, 
   SET_LOADING,
   LOGIN_SUCCESS,
-  LOGIN_FAILED  
+  LOGIN_FAILED,
+  LOGOUT
 } from './types';
 
 export const register = user => async dispatch => {
@@ -78,3 +79,5 @@ export const loadUser = ()=> async dispatch=> {
     dispatch({type: LOGIN_FAILED, msg: 'Authenticated Failed'});
   }
 };
+
+export const logout = ()=> ({ type: LOGOUT });

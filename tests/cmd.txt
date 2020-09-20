@@ -53,4 +53,3 @@ curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiN
 curl -d '{"text":"text1"}' -H "Content-Type:application/json" -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X POST http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98
 
 curl -H "x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY1ZGRjOTkzYzE5ZmUyNjI2YzkzOTA1In0sImlhdCI6MTU5OTk4Njg0MSwiZXhwIjoxNjAzNTg2ODQxfQ.0BsV2mN7Hkw6rhA9Fh_6zLTI2dfV-kVMX-h3N877hbE" -X DELETE http://localhost:5000/api/posts/comment/5f5f4d6c5425e83693a2bd98/5f5f594bca4bd63a468673ae
-

@@ -7,6 +7,7 @@ import Landing from './components/layouts/Landing';
 import Login from './components/auths/Login';
 import Register from './components/auths/Register';
 import Alert from './components/layouts/Alert';
+import Routes from './components/routing/Routes';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -23,13 +24,10 @@ const App = ()=> {
         <Fragment>
           <Alert />
           <Navbar />
-          <Route exact path='/' component={Landing} />
-          <section className='max-w-screen-lg m-auto p-4 mt-24'>
             <Switch>
-              <Route exact path='/Login' component={Login} />
-              <Route exact path='/Register' component={Register} />
+              <Route exact path='/' component={Landing} />
+              <Route component={Routes} />
             </Switch>
-          </section>
         </Fragment>
       </BrowserRouter>
     </Provider>

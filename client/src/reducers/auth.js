@@ -3,12 +3,13 @@ import {
   REGISTER_FAILED, 
   SET_LOADING,
   LOGIN_SUCCESS,
-  LOGIN_FAILED 
+  LOGIN_FAILED,
+  LOGOUT
 } from '../actions/types'; 
 
 const initialState = {
   isAuthenticated: null,
-  token: localStorage.getItem('token'),
+  token: null,
   user: null,
   loading: false,
   isRegisterSuccess: null,
@@ -25,7 +26,7 @@ export default ( state=initialState, action ) => {
         msg: 'Register Successed',
         loading: false,
         isRegisterSuccess: true
-      };
+    };
     case REGISTER_FAILED: 
       localStorage.removeItem('token');
       return {
@@ -35,7 +36,17 @@ export default ( state=initialState, action ) => {
         loading: false,
         isRegisterSuccess: false,
         token: null
-      };
+    };
+    case LOGIN_FAILED:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        user: null,
+        msg: action.payload,
+        loading: false,
+        isAuthenticated: false, 
+        token: null
+    };
     case SET_LOADING: return {
       ...state,
       loading: true
@@ -47,15 +58,9 @@ export default ( state=initialState, action ) => {
       user: action.payload,
       msg: 'Login Succeeded'
     };
-    case LOGIN_FAILED: 
+    case LOGOUT:
       localStorage.removeItem('token');
-      return {
-        ...state,
-        loading: false,
-        user: null,
-        msg: action.payload,
-        isAuthenticated: false
-      };
+      return initialState;
     default: return state;
   }
 };
