@@ -4,7 +4,8 @@ import {
   SET_LOADING,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types';
 
 export const register = user => async dispatch => {
@@ -80,4 +81,7 @@ export const loadUser = ()=> async dispatch=> {
   }
 };
 
-export const logout = ()=> ({ type: LOGOUT });
+export const logout = ()=> dispatch => { 
+  dispatch({type: CLEAR_PROFILE });
+  dispatch({type: LOGOUT });
+}

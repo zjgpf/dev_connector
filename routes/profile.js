@@ -190,7 +190,8 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 
 router.get('/github/:username', async (req, res) => {
   try {
-    const _data = await fetch(`https://api.github.com/users/${req.params.userName}/repos?per_page=5&sort=created:asc`);
+    const url = `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
+    const _data = await fetch(url);
     const data = await _data.json();
     return res.json(data);
   } catch (err) {
