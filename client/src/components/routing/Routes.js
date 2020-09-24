@@ -9,8 +9,8 @@ import AddExperience from '../forms/AddExperience';
 import AddEducation from '../forms/AddEducation';
 import Profiles from '../profiles/Profiles';
 import Profile from '../profile/Profile';
-//import Posts from '../posts/Posts';
-//import Post from '../post/Post';
+import Posts from '../posts/Posts';
+import Post from '../post/Post';
 //import NotFound from '../layout/NotFound';
 import PrivateRoute from './PrivateRoute';
 
@@ -27,6 +27,8 @@ const Routes = ()=> {
         <PrivateRoute exact path="/edit-profile" component={ProfileForm} />
         <PrivateRoute exact path="/add-experience" component={AddExperience} />
         <PrivateRoute exact path="/add-education" component={AddEducation} />
+        <PrivateRoute exact path="/posts" component={Posts} />
+        <PrivateRoute exact path="/post/:id" component={Post} />
       </Switch>
     </section>
   );
